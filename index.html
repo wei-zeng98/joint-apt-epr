@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Bridging Piano Transcription and Rendering via Disentangled Score and Style Representations</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <style>
+  audio {
+    width: 120px;
+    height: 30px;
+    border-radius: 6px;
+    margin: 4px auto;
+    display: block;
+    background-color: #f8f8f8;
+  }
+
+  audio:hover {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  }
+</style>
+<script>
+  document.addEventListener('play', function(e){
+    const audios = document.querySelectorAll('audio');
+    audios.forEach((audio) => {
+      if (audio !== e.target) {
+        audio.pause();
+      }
+    });
+  }, true);
+</script>
+
+
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Bridging Piano Transcription and Rendering via Disentangled Score Content and Style</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">ICLR 2026</span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">Wei Zeng,</span>
+              <span class="author-block">Junchuan Zhao,</span>
+              <span class="author-block">Ye Wang</span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">National University of Singapore</span>
+            </div>
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+
+                    <!-- Code repository link -->
+                    <span class="link-block">
+                      <a href="https://github.com/wei-zeng98/joint-apt-epr" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-code-branch"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Expressive performance rendering (EPR) and automatic piano transcription (APT) are fundamental yet inverse tasks in music information retrieval: EPR generates expressive performances from symbolic scores, while APT recovers scores from performances. Despite their dual nature, prior work has addressed them independently. In this paper, we propose a unified framework that jointly models EPR and APT by disentangling note-level score content and global performance style representations from both paired and unpaired data. Our framework is built on a transformer-based sequence-to-sequence (Seq2Seq) architecture and is trained using only sequence-aligned data, without requiring fine-grained note-level alignment. To automate the rendering process while ensuring stylistic compatibility with the score, we introduce an independent diffusion-based performance style recommendation (PSR) module that generates style embeddings directly from score content. This modular component supports both style transfer and flexible rendering across a range of expressive styles. Experimental results from both objective and subjective evaluations demonstrate that our framework achieves competitive performance on EPR and APT tasks, while enabling effective content–style disentanglement, reliable style transfer, and stylistically appropriate rendering.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="item">
+      <div style="max-width: 50%; margin: 0 auto;">
+        <img src="static/images/overall_architecture.png"
+             alt="MY ALT TEXT"
+             style="width: 100%; height: auto;" />
+        <!-- Caption -->
+        <h2 class="subtitle" style="font-size: 0.9rem; text-align: justify; margin-top: 0.5rem;">
+          <strong>Figure 1</strong>: Relationship between EPR and APT (top left) and an overview of the proposed framework.
+          The model comprises a joint transformer-based architecture for EPR and APT, along with a
+          diffusion-based performance style recommendation (PSR) module. Four tasks are trained jointly:
+          masked score reconstruction, masked performance reconstruction, expressive performance
+          rendering (EPR), and automatic performance transcription (APT). Score content features extracted
+          from score and performance inputs respectively, are encouraged to align. A global style feature
+          is learned as a disentangled factor to support style transfer. The PSR module is trained to generate
+          style representation from score content alone, emulating a pianist's ability to select appropriate
+          performance styles.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End image carousel -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h1 class="title is-3 has-text-centered">Demo</h1>
+    <div class="container is-max-desktop">
+      <h1 class="title is-4 has-text-centered">EPR results with baselines</h1>
+      <div style="max-width: 60%; margin: 0 auto; text-align: center;">
+        
+        <!-- Image carousel -->
+        <section class="hero is-small">
+          <div class="hero-body">
+            <div class="container">
+              <div id="results-carousel" class="carousel results-carousel">
+              <div class="item">
+                <!-- Your image here -->
+                <img src="static/audio/part-I/2/xml_score.png" alt="MY ALT TEXT"/>
+                <h2 class="subtitle has-text-centered">
+                  <strong>Sample 1 (Bach)</strong>: Fugue No. 1 in 4 voices in C Major, BWV 846<br>
+                </h2>
+              </div>
+              <div class="item">
+                <!-- Your image here -->
+                <img src="static/audio/part-I/3/xml_score.png" alt="MY ALT TEXT"/>
+                <h2 class="subtitle has-text-centered">
+                  <strong>Sample 2 (Rachmaninoff)</strong>: Preludes, Op. 23<br>
+                </h2>
+              </div>
+              <div class="item">
+                <!-- Your image here -->
+                <img src="static/audio/part-I/5/xml_score.png" alt="MY ALT TEXT"/>
+                <h2 class="subtitle has-text-centered">
+                  <strong>Sample 3 (Schubert)</strong>: Impromptus, Op. 90<br>
+              </h2>
+            </div>
+            <div class="item">
+              <!-- Your image here -->
+              <img src="static/audio/part-I/7/xml_score.png" alt="MY ALT TEXT"/>
+              <h2 class="subtitle has-text-centered">
+                <strong>Sample 4 (Scriabin)</strong>: 12 Etudes, Op.8<br>
+              </h2>
+            </div>
+            <div class="item">
+              <!-- Your image here -->
+              <img src="static/audio/part-I/10/xml_score.png" alt="MY ALT TEXT"/>
+              <h2 class="subtitle has-text-centered">
+                <strong>Sample 5 (Ravel)</strong>: Gaspard de la Nuit<br>
+              </h2>
+            </div>
+          </div>
+        </div>
+        </div>
+        </section>
+      </div>
+      <div style="overflow-x: auto;">
+        <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+          <thead>
+            <tr>
+              <th style="text-align: center;">Sample</th>
+              <th style="text-align: center;">Score</th>
+              <th style="text-align: center;">Human</th>
+              <th style="text-align: center;">DExter</th>
+              <th style="text-align: center;">VirtuosoNet</th>
+              <th style="text-align: center;">Ours (Target Style)</th>
+              <th style="text-align: center;">Ours (PSR)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: center;">1</td>
+              <td><audio controls><source src="static/audio/part-I/2/score.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-I/2/human.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-I/2/dexter.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-I/2/virtuosonet.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-I/2/tgt_style.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-I/2/psr.mp3" type="audio/wav" /></audio></td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">2</td>
+              <td><audio controls><source src="static/audio/part-I/3/score.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-I/3/human.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-I/3/dexter.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-I/3/virtuosonet.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-I/3/tgt_style.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-I/3/psr.mp3" type="audio/wav" /></audio></td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">3</td>
+              <td><audio controls><source src="static/audio/part-I/5/score.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-I/5/human.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-I/5/dexter.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-I/5/virtuosonet.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-I/5/tgt_style.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-I/5/psr.mp3" type="audio/wav" /></audio></td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">4</td>
+              <td><audio controls><source src="static/audio/part-I/7/score.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-I/7/human.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-I/7/dexter.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-I/7/virtuosonet.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-I/7/tgt_style.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-I/7/psr.mp3" type="audio/wav" /></audio></td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">5</td>
+              <td><audio controls><source src="static/audio/part-I/10/score.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-I/10/human.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-I/10/dexter.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-I/10/virtuosonet.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-I/10/tgt_style.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-I/10/psr.mp3" type="audio/wav" /></audio></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top: 1em;">
+        <ul style="line-height: 1.6;">
+          <li><strong>Score</strong>: MIDI exported directly from <a href="https://musescore.org" target="_blank" rel="noopener noreferrer">MuseScore</a> using the MusicXML file.</li>
+          <li><strong>Human</strong>: Human-performed rendition.</li>
+          <li><strong>DExter</strong>: Performance generated by the <a href="https://github.com/anusfoil/DExter" target="_blank" rel="noopener noreferrer">DExter</a> model.</li>
+          <li><strong>VirtuosoNet</strong>: Performance generated by the <a href="https://github.com/jdasam/virtuosoNet" target="_blank" rel="noopener noreferrer">VirtuosoNet</a> model.</li>
+          <li><strong>Ours (Target Style)</strong>: Performance generated by our model using the style embedding extracted from the corresponding human performance.</li>
+          <li><strong>Ours (PSR)</strong>: Performance generated by our model using the style embedding generated by the PSR module.</li>
+        </ul>
+      </div>
+
+
+      <br>
+      <h1 class="title is-4 has-text-centered">Style transfer</h1>
+      <div style="overflow-x: auto;">
+        <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+          <thead>
+            <tr>
+              <th style="text-align: center;">Sample</th>
+              <th style="text-align: center;">Original</th>
+              <th style="text-align: center;">Target</th>
+              <th style="text-align: center;">Transfer</th>
+              <th style="text-align: center;">Mean</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: center;">1</td>
+              <td><audio controls><source src="static/audio/part-II/1/original_style.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-II/1/ref_style.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-II/1/transfer_style.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-II/1/mean_style.mp3" type="audio/wav" /></audio></td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">2</td>
+              <td><audio controls><source src="static/audio/part-II/2/original_style.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-II/2/ref_style.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-II/2/transfer_style.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-II/2/mean_style.mp3" type="audio/wav" /></audio></td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">3</td>
+              <td><audio controls><source src="static/audio/part-II/3/original_style.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-II/3/ref_style.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-II/3/transfer_style.mp3" type="audio/wav" /></audio></td>
+              <td><audio controls><source src="static/audio/part-II/3/mean_style.mp3" type="audio/wav" /></audio></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-top: 1em;">
+        <ul style="line-height: 1.6;">
+          <li><strong>Original</strong>: Performance generated using the style extracted from the original (source) performance.</li>
+          <li><strong>Target</strong>: Reference performance with a different musical content but the desired style.</li>
+          <li><strong>Transfer</strong>: Performance generated using the style transferred from the target reference to the original content.</li>
+          <li><strong>Mean</strong>: Performance generated by averaging the style embeddings from both the original and target styles, representing interpolation in the style space.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
